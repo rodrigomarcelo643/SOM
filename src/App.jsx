@@ -2,15 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Login from "./Student/components/Login";
-import LoginNavbar from "./Student/Navbar/LoginNavbar";
+import { RouterProvider, Outlet } from "react-router-dom";
+import router from "./router/router";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Login />
+      <RouterProvider router={router} />
     </>
   );
 }

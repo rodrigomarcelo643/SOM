@@ -4,12 +4,16 @@ import BG from "../../assets/loginBg.png";
 import link1 from "../../assets/fb.png";
 import link2 from "../../assets/globe.png";
 import link3 from "../../assets/envelop.png";
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   // State for form fields
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
+  function OtpVerify() {
+    navigate("/OTP");
+  }
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -140,6 +144,7 @@ const Login = () => {
               {/* Login Button */}
               <div className="flex justify-center mt-4 items-center">
                 <button
+                  onClick={OtpVerify}
                   type="submit"
                   className="py-2.5 cursor-pointer px-8 bg-[#6D1212] text-white rounded-md hover:bg-[#8E2525]"
                 >
