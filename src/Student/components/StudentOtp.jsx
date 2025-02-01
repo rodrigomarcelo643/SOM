@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { IoArrowBack } from "react-icons/io5";
+import { Typography } from "@material-tailwind/react";
 import capsuleImage from "../../assets/capsule.png";
+import verified from "../../assets/verified.png";
 import { useNavigate } from "react-router-dom";
 
 const StudentOtp = () => {
@@ -9,6 +11,8 @@ const StudentOtp = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [resendSuccess, setResendSuccess] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalAnimating, setIsModalAnimating] = useState(false); // State for modal animation trigger
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,7 +40,8 @@ const StudentOtp = () => {
   const handleVerify = () => {
     if (otp.join("") === "123456") {
       setSuccess(true);
-      navigate("/Dashboard");
+      setIsModalAnimating(true); // Trigger modal animation
+      setIsModalOpen(true); // Show modal upon successful verification
       setError("");
     } else {
       setError("Invalid OTP code");
@@ -51,9 +56,15 @@ const StudentOtp = () => {
     setTimeout(() => setResendSuccess(false), 3000);
   };
 
-  function goBack() {
+  const goBack = () => {
     navigate("/");
-  }
+  };
+
+  // Handle modal "Continue" button click
+  const handleContinue = () => {
+    setIsModalOpen(false);
+    navigate("/Dashboard"); // Redirect to homepage
+  };
 
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
@@ -67,7 +78,7 @@ const StudentOtp = () => {
         <p className="text-sm text-center font-semibold text-[#383838CC] mb-4">
           Enter the verification code from <br /> your email
         </p>
-        <div className="flex gap-8 px-12 py-7 text-[5px] border-2 border-[#D7D7D7] rounded-[20px]">
+        <div className="flex gap-8 px-9 py-7 text-[5px] border-2 border-[#D7D7D7] rounded-[20px]">
           {otp.map((data, index) => (
             <input
               key={index}
@@ -81,12 +92,10 @@ const StudentOtp = () => {
           ))}
         </div>
         {error && (
-          <p className="text-red-500 text-sm mt-1 mb-[-8px] ">{error}</p>
+          <p className="text-red-500 text-sm mt-1 mb-[-8px]">{error}</p>
         )}
         {success && (
-          <p className="text-green-500 text-left text-sm mt-2 mb-[-5px]">
-            OTP Verified
-          </p>
+          <p className="text-green-500 text-left text-sm mt-2 mb-[-5px]"></p>
         )}
         {resendSuccess && (
           <p className="text-green-500 text-sm mt-2 mb-[-5px]">
@@ -106,7 +115,7 @@ const StudentOtp = () => {
             className={`mt-4 py-2 px-10 bg-[#A0A0A0]  text-[16px] text-white rounded-md ${
               timer > 0
                 ? "bg-gray-400 text-white cursor-not-allowed "
-                : "bg-red-500 text-white"
+                : "bg-red-500 text-white cursor-pointer"
             }`}
           >
             Resend OTP
@@ -130,6 +139,38 @@ const StudentOtp = () => {
           className="h-2/4 w-[700px] md:left-[-30px] lg:block object-contain relative lg:left-[-250px]"
         />
       </div>
+
+      {/* Modal for Success with Animation */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-20">
+          <div
+            className={`bg-white p-6 text-center justify-center rounded-[23px] shadow-lg w-96 transition-all duration-700 ease-out transform ${
+              isModalAnimating ? "scale-100 opacity-100" : "scale-95 opacity-0"
+            }`}
+            onAnimationEnd={() => setIsModalAnimating(false)} // Stop animation once complete
+          >
+            <img
+              className="mx-auto relative top-[-50px]"
+              src={verified}
+              alt="Verified"
+            />
+            <Typography className="text-3xl text-[#691717] relative top-[-60px] py-4 border-b border-[#69171780] font-bold mb-4">
+              Account Verified!
+            </Typography>
+            <div className="flex flex-col justify-center items-center gap-4">
+              <button
+                onClick={handleContinue}
+                className="w-[150px] py-3 mt-[-60px] shadow-lg bg-[#8D2525] cursor-pointer text-white rounded-[40px] hover:bg-red-600"
+              >
+                Continue
+              </button>
+              <p className="text-center text-sm text-gray-500">
+                Click below to redirect to homepage
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -21,6 +21,12 @@ import logo from "../../assets/SWU.png";
 import profile from "../../assets/profile.jpg";
 import sadImg from "../../assets/sad.png";
 
+// Importing the page components
+import Home from "../pages/Home";
+import Enrollment from "../pages/Enrollment";
+import Folder from "../pages/Folder";
+import Profile from "../pages/Profile";
+
 function StudentSidebar() {
   const [active, setActive] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -63,16 +69,32 @@ function StudentSidebar() {
     setIsModalOpen(false); // Close the modal if canceled
   };
 
+  // Function to render the active component dynamically
+  const renderActiveComponent = () => {
+    switch (active) {
+      case "Dashboard":
+        return <Home />;
+      case "Enrollment":
+        return <Enrollment />;
+      case "Folder":
+        return <Folder />;
+      case "Profile":
+        return <Profile />;
+      default:
+        return <Home />;
+    }
+  };
+
   return (
     <div className="flex h-[100vh]">
       {/* Sidebar */}
       <Card
         className={`h-full w-60.5 transition-transform transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 lg:block absolute lg:relative z-10 overflow-y-auto fixed top-0 left-0 bottom-0 rounded-none border-r border-gray-300`}
+        } lg:translate-x-0 lg:block absolute lg:relative z-20 overflow-hidden fixed top-0 left-0 bottom-0 rounded-none border-r border-gray-300`}
       >
         {/* Sidebar Close Button */}
-        <div className="absolute top-4 right-4 z-10 cursor-pointer lg:hidden">
+        <div className="absolute top-4 right-4 z-30 cursor-pointer lg:hidden">
           <button
             onClick={toggleSidebar}
             className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
@@ -90,7 +112,7 @@ function StudentSidebar() {
           {menuItems.map((item) => (
             <ListItem
               key={item.name}
-              onClick={() => setActive(item.name)}
+              onClick={() => setActive(item.name)} // Set the active component
               className={`cursor-pointer flex items-center w-full py-4 relative left-2 transition-all duration-200 ${
                 active === item.name
                   ? "bg-[#B82A2A] text-white"
@@ -126,18 +148,16 @@ function StudentSidebar() {
               <ListItemPrefix>
                 <img src={logoutIcon} className="h-6 w-6" />
               </ListItemPrefix>
-              <Typography className="font-bold hover:text-white">
-                Logout
-              </Typography>
+              <Typography className="font-bold ">Logout</Typography>
             </ListItem>
           </div>
         </List>
       </Card>
 
       {/* Main Content Area */}
-      <div className="flex-1">
+      <div className={`flex-1 ${isSidebarOpen ? "ml-60" : ""} overflow-y-auto`}>
         {/* Header Navbar */}
-        <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md shadow-black">
+        <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md  z-10 fixed w-full top-0 left-0">
           {/* Hamburger Icon */}
           <button onClick={toggleSidebar} className="lg:hidden">
             <Bars3Icon className="h-6 w-6 text-gray-600" />
@@ -171,14 +191,14 @@ function StudentSidebar() {
         </div>
 
         {/* Content Display */}
-        <div className="p-8 bg-gray-100">
-          <Typography variant="h4">{active}</Typography>
+        <div className="p-4 bg-gray-100 pt-5 mt-23">
+          {renderActiveComponent()}
         </div>
       </div>
 
       {/* Logout Confirmation Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-20">
+        <div className="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-30">
           <div className="bg-white p-6 text-center justify-center rounded-[23px] shadow-lg w-96">
             <img
               className="mx-auto block relative top-[-60px] "
