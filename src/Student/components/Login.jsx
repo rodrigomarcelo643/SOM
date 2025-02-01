@@ -14,6 +14,9 @@ const Login = () => {
   function OtpVerify() {
     navigate("/OTP");
   }
+  function forgotPassword() {
+    navigate("/forgotpassword");
+  }
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -136,7 +139,10 @@ const Login = () => {
                   className="w-full p-3 mb-1 text-sm border border-gray-300 rounded-md"
                   required
                 />
-                <p className="text-[13px] text-end mt-2 underline text-[#6D1212]">
+                <p
+                  onClick={forgotPassword}
+                  className="text-[13px] text-end mt-2 cursor-pointer underline text-[#6D1212]"
+                >
                   Forgot Password
                 </p>
               </div>
