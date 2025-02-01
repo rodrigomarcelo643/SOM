@@ -11,6 +11,14 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
   const [country, setCountry] = useState(""); // Default empty, will show when Foreigner is selected
   const [showDropdown, setShowDropdown] = useState(false); // State to toggle the dropdown
   const [isEditing, setIsEditing] = useState(false); // State to control edit mode
+  const [firstName, setFirstName] = useState("Adrian"); // Actual name
+  const [lastName, setLastName] = useState("Say"); // Actual last name
+  const [middleInitial, setMiddleInitial] = useState("D"); // Actual middle initial
+  const [birthDate, setBirthDate] = useState({
+    month: currentDate.month,
+    day: currentDate.day,
+    year: currentDate.year,
+  }); // Actual birthdate values
   const dropdownRef = useRef(null); // Ref for the dropdown
   const profilePicRef = useRef(null); // Ref for the profile picture
 
@@ -115,30 +123,45 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
             <div className="flex space-x-4">
               <div className="w-[140px]">
                 <label className="block mb-2">First Name</label>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="p-2 border border-gray-300 rounded-md w-full"
-                  disabled={!isEditing} // Disabled when not in edit mode
-                />
+                {isEditing ? (
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    className="p-2 border border-gray-300 rounded-md w-full"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                ) : (
+                  <p>{firstName}</p>
+                )}
               </div>
               <div className="w-[140px]">
                 <label className="block mb-2">Last Name</label>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="p-2 border border-gray-300 rounded-md w-full"
-                  disabled={!isEditing} // Disabled when not in edit mode
-                />
+                {isEditing ? (
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="p-2 border border-gray-300 rounded-md w-full"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                ) : (
+                  <p>{lastName}</p>
+                )}
               </div>
               <div className="w-[140px]">
                 <label className="block mb-2">MI</label>
-                <input
-                  type="text"
-                  placeholder="MI"
-                  className="p-2 border border-gray-300 rounded-md w-full"
-                  disabled={!isEditing} // Disabled when not in edit mode
-                />
+                {isEditing ? (
+                  <input
+                    type="text"
+                    placeholder="MI"
+                    className="p-2 border border-gray-300 rounded-md w-full"
+                    value={middleInitial}
+                    onChange={(e) => setMiddleInitial(e.target.value)}
+                  />
+                ) : (
+                  <p>{middleInitial}</p>
+                )}
               </div>
             </div>
             <p>Birthdate </p>
@@ -147,7 +170,13 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
               <div className="w-[80px]">
                 <select
                   className="p-2 border border-gray-300 rounded-md w-full"
-                  defaultValue={currentDate.month}
+                  value={birthDate.month}
+                  onChange={(e) =>
+                    setBirthDate((prev) => ({
+                      ...prev,
+                      month: e.target.value,
+                    }))
+                  }
                   disabled={!isEditing} // Disabled when not in edit mode
                 >
                   <option disabled>MM</option>
@@ -161,7 +190,13 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
               <div className="w-[80px]">
                 <select
                   className="p-2 border border-gray-300 rounded-md w-full"
-                  defaultValue={currentDate.day}
+                  value={birthDate.day}
+                  onChange={(e) =>
+                    setBirthDate((prev) => ({
+                      ...prev,
+                      day: e.target.value,
+                    }))
+                  }
                   disabled={!isEditing} // Disabled when not in edit mode
                 >
                   <option disabled>DD</option>
@@ -175,7 +210,13 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
               <div className="w-[80px]">
                 <select
                   className="p-2 border border-gray-300 rounded-md w-full"
-                  defaultValue={currentDate.year}
+                  value={birthDate.year}
+                  onChange={(e) =>
+                    setBirthDate((prev) => ({
+                      ...prev,
+                      year: e.target.value,
+                    }))
+                  }
                   disabled={!isEditing} // Disabled when not in edit mode
                 >
                   <option disabled>YY</option>
@@ -187,8 +228,8 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
                 </select>
               </div>
             </div>
-            <p>Gender </p>
             {/* Gender Selection (Circle Instead of Radio) */}
+            <p>Gender </p>
             <div className="flex space-x-6 mt-[-10px] lg:flex sm:overflow-hidden ">
               {["Male", "Female", "Prefer not to say"].map((option) => (
                 <label key={option} className="flex items-center space-x-2">
@@ -204,8 +245,8 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
                 </label>
               ))}
             </div>
+            {/* Citizenship Selection */}
             <p>Citizenship </p>
-            {/* Citizenship Circle Selection (Same Style as Gender) */}
             <div className="flex space-x-6 mt-[-10px]">
               {["Filipino", "Foreigner"].map((option) => (
                 <label key={option} className="flex items-center space-x-2">
