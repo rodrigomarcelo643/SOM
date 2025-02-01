@@ -123,12 +123,12 @@ function StudentSidebar() {
         </div>
 
         {/* Sidebar Menu */}
-        <List className="overflow-y-auto overflow-x-hidden mt-2 flex-1">
+        <div className="overflow-y-auto overflow-x-hidden mt-4  flex-1">
           {menuItems.map((item) => (
-            <ListItem
+            <div
               key={item.name}
               onClick={() => handleTabChange(item.name)} // Set the active component
-              className={`cursor-pointer flex items-center w-full py-4 relative left-2 transition-all duration-200 ${
+              className={`cursor-pointer flex items-center w-full py-4 mb-1.5 pl-3 relative left-4 transition-all duration-200 ${
                 active === item.name
                   ? "bg-[#B82A2A] text-white"
                   : "hover:bg-gray-200"
@@ -140,33 +140,34 @@ function StudentSidebar() {
               style={{
                 borderTopRightRadius: "0",
                 borderBottomRightRadius: "0",
-              }} // Remove border-radius on right side
+              }}
             >
-              <ListItemPrefix>
+              <div>
                 <img
                   src={
                     active === item.name ? item.activeIcon : item.inactiveIcon
                   }
                   className="w-5 w-5 relative left-2.5"
                 />
-              </ListItemPrefix>
-              <Typography className="ml-2 font-bold">{item.name}</Typography>
-            </ListItem>
+              </div>
+              <h1 className="ml-2 relative left-4 font-bold">{item.name}</h1>{" "}
+              {/* Apply font-inter here */}
+            </div>
           ))}
 
           {/* Logout Button */}
-          <div className="w-full border-t mt-25 border-[#701919]">
-            <ListItem
+          <div className="w-full border-t p-2 mt-25 border-[#701919]">
+            <div
               onClick={() => setIsModalOpen(true)} // Open modal when clicked
-              className="cursor-pointer flex items-center py-5 px-12 hover:bg-gray-200 mt-2"
+              className="cursor-pointer flex items-center py-5 rounded-[10px] px-12 hover:bg-gray-200 mt-2"
             >
               <ListItemPrefix>
                 <img src={logoutIcon} className="h-6 w-6" />
               </ListItemPrefix>
-              <Typography className="font-bold">Logout</Typography>
-            </ListItem>
+              <h1 className="font-bold">Logout</h1>
+            </div>
           </div>
-        </List>
+        </div>
       </Card>
 
       {/* Main Content Area */}
@@ -197,10 +198,8 @@ function StudentSidebar() {
 
             {/* Name and Profile Image */}
             <div className="flex flex-col items-start text-white">
-              <Typography className="text-white font-semibold">
-                Adrian Say
-              </Typography>
-              <Typography className="text-white text-sm">Student</Typography>
+              <h1 className="text-white font-semibold"> Adrian Say</h1>
+              <p className="text-white text-sm">Student</p>
             </div>
             <div className="p-2 rounded-full">
               <img

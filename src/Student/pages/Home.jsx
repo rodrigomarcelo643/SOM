@@ -8,12 +8,11 @@ function Home() {
   const [year2Announcements, setYear2Announcements] = useState([]);
 
   useEffect(() => {
-    // Simulate fetching Year 2 data
     setYear2Announcements(fetchAnnouncements("Year2"));
   }, []);
 
   return (
-    <div className="p-2 ">
+    <div className="p-2 mt-[-30px] ">
       <div className="mt-8 space-y-6">
         {/* Pinned Announcements */}
         <div className="bg-white py-6 px-3 rounded-lg shadow-lg flex items-center space-x-4 border border-gray-300">
