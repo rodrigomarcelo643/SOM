@@ -4,6 +4,7 @@ import Login from "../Student/components/Login";
 import StudentOtp from "../Student/components/StudentOtp";
 import Dashboard from "../Student/components/Dashboard";
 import StudentForgotPassword from "../Student/components/StudentForgotPassword";
+import AdminSidebar from "../Admin/Navbar/AdminNavbar";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,12 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "/forgotpassword", // Removed extra space here
+    path: "/forgotpassword",
     element: <StudentForgotPassword />,
+  },
+  {
+    path: "/Admin",
+    element: <AdminSidebar />,
   },
 ]);
 

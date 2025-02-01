@@ -57,7 +57,7 @@ function StudentForgotPassword() {
             value={emailOrId}
             onChange={handleEmailOrIdChange}
             placeholder="Student ID or Email"
-            className="w-full p-4 mb-4 border border-gray-400  rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-gray-300 transition"
+            className="w-full p-4 mb-4 border border-gray-400 rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-gray-300 transition"
           />
           <button
             onClick={() => setIsOtpSent(true)}

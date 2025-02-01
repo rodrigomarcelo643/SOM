@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/msis_logo.png";
+import { useNavigate } from "react-router-dom";
 
 const LoginNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState("home");
 
+  const navigate = useNavigate();
+
   const handleTabChange = (tab) => {
     setCurrentTab(tab);
     setMenuOpen(false); // Close menu after clicking a tab
   };
+  function navigateAdmin() {
+    navigate("/Admin");
+  }
 
   return (
     <nav className="bg-transparent py-9.5 px-8 flex justify-between items-center fixed w-full top-0 left-0 z-10 ">
@@ -41,7 +47,10 @@ const LoginNavbar = () => {
           </div>
         ))}
         {/* Admin Button with Space */}
-        <button className="border border-white text-white px-5 mr-40 py-.9 cursor-pointer rounded-md transition-all duration-300 hover:bg-white hover:text-[#8E2525]">
+        <button
+          onClick={navigateAdmin}
+          className="border border-white text-white px-5 mr-40 py-.9 cursor-pointer rounded-md transition-all duration-300 hover:bg-white hover:text-[#8E2525]"
+        >
           Admin
         </button>
       </div>
@@ -75,7 +84,10 @@ const LoginNavbar = () => {
           </a>
         ))}
         {/* Mobile Admin Button */}
-        <button className="border border-white text-white px-5 py-2 rounded-md transition-all duration-300 hover:bg-white hover:text-[#8E2525]">
+        <button
+          onClick={navigateAdmin}
+          className="border border-white text-white px-5 py-2 rounded-md transition-all duration-300 hover:bg-white hover:text-[#8E2525]"
+        >
           Admin
         </button>
       </div>

@@ -17,6 +17,7 @@ const Login = () => {
   function forgotPassword() {
     navigate("/forgotpassword");
   }
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -17,7 +17,7 @@ import profileInactive from "../../assets/profileInactive.png";
 import profileActive from "../../assets/profileActive.png";
 import logoutIcon from "../../assets/logout.png";
 import logo from "../../assets/SWU.png";
-import profile from "../../assets/profile.jpg";
+import profileAdmin from "../../assets/adminProfile.jpg";
 import sadImg from "../../assets/sad.png";
 import navbarBG from "../../assets/navbarBG.png"; // Import your navbar background image
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ import Enrollment from "../pages/Enrollment";
 import Folder from "../pages/Folder";
 import Profile from "../pages/Profile";
 
-function StudentSidebar() {
+function AdminSidebar() {
   // Set the default active component to Dashboard
   const [active, setActive] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -198,12 +198,12 @@ function StudentSidebar() {
 
             {/* Name and Profile Image */}
             <div className="flex flex-col items-end text-white">
-              <h1 className="text-white font-semibold"> Adrian Say</h1>
-              <p className="text-white text-sm">Student</p>
+              <h1 className="text-white font-semibold"> Ronald Catacte </h1>
+              <p className="text-white text-sm ">Admin</p>
             </div>
             <div className="p-2 rounded-full">
               <img
-                src={profile}
+                src={profileAdmin}
                 alt="Profile"
                 className="h-11 w-11 rounded-full object-cover"
               />
@@ -250,4 +250,4 @@ function StudentSidebar() {
   );
 }
 
-export default StudentSidebar;
+export default AdminSidebar;
