@@ -275,7 +275,7 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                   className="p-2 border border-gray-300 rounded-md w-full"
-                  disabled={!isEditing} // Disabled when not in edit mode
+                  disabled={!isEditing}
                 />
               </div>
             )}
@@ -283,7 +283,6 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
         </div>
       </div>
     ),
-    // Other tab contents would go here...
   };
 
   return (

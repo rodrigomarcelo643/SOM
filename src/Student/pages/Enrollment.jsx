@@ -31,7 +31,7 @@ function Enrollment() {
         <button
           className={`${
             activeTab === "Foreigner"
-              ? "text-[#B82A2A] border-b-4 border-[#B82A2A]"
+              ? "text-[#B82A2A] border-b-4 border-[#B82A2A] "
               : "text-gray-400 cursor-not-allowed"
           } text-xl font-semibold py-2 px-4 transition-colors duration-300`}
           disabled={userType !== "Foreigner"}
