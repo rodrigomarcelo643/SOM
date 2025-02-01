@@ -19,6 +19,7 @@ import profileActive from "../../assets/profileActive.png";
 import logoutIcon from "../../assets/logout.png";
 import logo from "../../assets/SWU.png";
 import profile from "../../assets/profile.jpg";
+import sadImg from "../../assets/sad.png";
 
 function StudentSidebar() {
   const [active, setActive] = useState("Dashboard");
@@ -177,23 +178,28 @@ function StudentSidebar() {
 
       {/* Logout Confirmation Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-20">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-            <Typography className="text-lg font-bold mb-4">
+        <div className="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-20">
+          <div className="bg-white p-6 text-center justify-center rounded-[23px] shadow-lg w-96">
+            <img
+              className="mx-auto block relative top-[-60px] "
+              src={sadImg}
+              alt="Sad Image"
+            />
+            <Typography className="text-2xl py-4 text-[#691717] relative top-[-70px] border-b border-[#69171780] font-bold mb-4">
               Are you sure you want to logout?
             </Typography>
-            <div className="flex justify-between">
-              <button
-                onClick={handleLogoutCancel}
-                className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400"
-              >
-                Cancel
-              </button>
+            <div className="flex justify-between gap-4 mt-[-60px]">
               <button
                 onClick={handleLogoutConfirm}
-                className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                className="w-full bg-[#8B2020] shadow-md text-white rounded-[15px] cursor-pointer hover:bg-red-600"
               >
-                Confirm
+                yes
+              </button>
+              <button
+                onClick={handleLogoutCancel}
+                className="w-full h-10 bg-[#FFC729] text-white shadow-md rounded-[14px] cursor-pointer hover:bg-gray-400"
+              >
+                no
               </button>
             </div>
           </div>
