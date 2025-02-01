@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <StudentOtp />,
   },
   {
-    path: "/Dashboard",
+    path: "/student",
     element: <Dashboard />,
   },
 ]);

@@ -102,9 +102,11 @@ function StudentSidebar() {
     <div className="flex h-[100vh]">
       {/* Sidebar */}
       <Card
-        className={`h-full w-60.5 transition-transform transform ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 lg:block absolute lg:relative z-20 overflow-hidden fixed top-0 left-0 bottom-0 rounded-none border-r border-gray-300`}
+        className={`h-full w-60.5 transition-transform transform fixed top-0 left-0 z-20
+    ${
+      isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+    } lg:translate-x-0 lg:block 
+    rounded-none border-r border-gray-300 bg-white shadow-lg`}
       >
         {/* Sidebar Close Button */}
         <div className="absolute top-4 right-4 z-30 cursor-pointer lg:hidden">
@@ -168,7 +170,11 @@ function StudentSidebar() {
       </Card>
 
       {/* Main Content Area */}
-      <div className={`flex-1 ${isSidebarOpen ? "ml-60" : ""} overflow-y-auto`}>
+      <div
+        className={`flex-1 overflow-y-auto ${
+          isSidebarOpen ? "ml-0" : "lg:ml-60"
+        }`}
+      >
         {/* Header Navbar */}
         <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md z-10 fixed w-full top-0 left-0">
           {/* Hamburger Icon */}

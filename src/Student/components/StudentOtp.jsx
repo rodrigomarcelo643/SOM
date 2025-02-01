@@ -63,7 +63,7 @@ const StudentOtp = () => {
   // Handle modal "Continue" button click
   const handleContinue = () => {
     setIsModalOpen(false);
-    navigate("/Dashboard"); // Redirect to homepage
+    navigate("/student"); // Redirect to homepage
   };
 
   return (
