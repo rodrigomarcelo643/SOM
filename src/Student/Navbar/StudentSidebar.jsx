@@ -94,7 +94,7 @@ function StudentSidebar() {
       case "Profile":
         return <Profile />;
       default:
-        return <Home />; // Default to Home (Dashboard)
+        return <Home />;
     }
   };
 
@@ -155,7 +155,7 @@ function StudentSidebar() {
           ))}
 
           {/* Logout Button */}
-          <div className="w-full border-t-2 mt-25 border-solid">
+          <div className="w-full border-t mt-25 border-[#701919]">
             <ListItem
               onClick={() => setIsModalOpen(true)} // Open modal when clicked
               className="cursor-pointer flex items-center py-5 px-12 hover:bg-gray-200 mt-2"

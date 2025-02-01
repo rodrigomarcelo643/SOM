@@ -27,7 +27,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center  mb-5 text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             (3) copies of NSO Birth Certificate, 1 copy original 2 copies
             authenticated
           </h1>
@@ -45,7 +45,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             (3) copies of Official Transcript of Records, 1 copy original 2
             copies authenticated
           </h1>
@@ -66,7 +66,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             (2) copies of Good Moral (Original Copies) 1 from the dean & 1 from
             your professors
           </h1>
@@ -83,7 +83,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             (3) copies of Diploma, 1 copy original & 2 copies authenticated
           </h1>
         </div>
@@ -103,7 +103,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm sm:text-base  mb-5 text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             (2) copies of Police Clearance, Visa, Passport
           </h1>
         </div>
@@ -120,7 +120,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm sm:text-base  mb-5 text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Original Copy of NMAT Result (Percentile rank = 40%)
           </h1>
         </div>
@@ -137,7 +137,7 @@ function Foreigner() {
         <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
           Browse
         </button>
-        <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+        <h1 className="mt-4 text-center text-sm sm:text-base  mb-5 text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
           Certificate of Grade Point Average or Grade Weighted Average (GWA) *If
           Pre-Med taken outside Philippines, We need “Red Ribbon” authentication
           from the embassy
@@ -155,7 +155,7 @@ function Foreigner() {
         <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
           Browse
         </button>
-        <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+        <h1 className="mt-4 text-center text-sm sm:text-base  mb-5 text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
           Undertaking with waiver, release and Quit claim *NMAT & Failed
           Subjects
         </h1>
@@ -175,7 +175,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center  mb-5 text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Physical examination report from University Clinic
           </h1>
         </div>
@@ -192,7 +192,7 @@ function Foreigner() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             School of Medicine Retention Policy & Grading System Effective SY
             2021-2022
           </h1>

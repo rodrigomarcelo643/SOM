@@ -40,8 +40,8 @@ const StudentOtp = () => {
   const handleVerify = () => {
     if (otp.join("") === "123456") {
       setSuccess(true);
-      setIsModalAnimating(true); // Trigger modal animation
-      setIsModalOpen(true); // Show modal upon successful verification
+      setIsModalAnimating(true);
+      setIsModalOpen(true);
       setError("");
     } else {
       setError("Invalid OTP code");
@@ -59,11 +59,9 @@ const StudentOtp = () => {
   const goBack = () => {
     navigate("/");
   };
-
-  // Handle modal "Continue" button click
   const handleContinue = () => {
     setIsModalOpen(false);
-    navigate("/student"); // Redirect to homepage
+    navigate("/student");
   };
 
   return (

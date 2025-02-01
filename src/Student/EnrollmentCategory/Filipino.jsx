@@ -25,7 +25,7 @@ function Filipino() {
         <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
           Browse
         </button>
-        <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+        <h1 className="mt-4 text-center mb-5 text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
           2 Photocopies of NSO Birth Certificates
         </h1>
       </div>
@@ -45,7 +45,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center  mb-5 text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Good Moral (from the dean 1 copy & from the professor 1 copy)
           </h1>
         </div>
@@ -62,7 +62,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center  mb-5 text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             2 Photocopies of BS Diploma or Certificate Expected Date of
             Graduation from the Dean
           </h1>
@@ -83,7 +83,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center  mb-5 text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Original Copy of NMAT Result (Percentile rank = 40%)
           </h1>
         </div>
@@ -99,7 +99,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm   mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             2pcs 2 x 2 picture
           </h1>
         </div>
@@ -119,7 +119,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5  sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Photocopy of Residence Certificate (Cedula)
           </h1>
         </div>
@@ -136,7 +136,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Certificate of Grade Point Average or Grade Weighted Average (GWA)
           </h1>
         </div>
@@ -153,7 +153,7 @@ function Filipino() {
         <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
           Browse
         </button>
-        <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+        <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
           Undertaking with waiver, release and Quit claim *NMAT & Failed
           Subjects
         </h1>
@@ -173,7 +173,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             Physical examination report from University Clinic
           </h1>
         </div>
@@ -190,7 +190,7 @@ function Filipino() {
           <button className="mt-2 text-[12px] py-2 px-6 bg-[#C94848] text-white rounded-[20px] transition-all hover:bg-[#A93C3C]">
             Browse
           </button>
-          <h1 className="mt-4 text-center text-sm sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
+          <h1 className="mt-4 text-center text-sm  mb-5 sm:text-base text-gray-600 md:text-[15px] lg:text-[15px] xl:text-[20px] text-[14px]">
             School of Medicine Retention Policy & Grading System Effective SY
             2021-2022
           </h1>
