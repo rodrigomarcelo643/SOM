@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ProfilePic from "../../assets/profile.jpg";
-
+import seeIcon from "../../assets/User.png";
+import uploadIcon from "../../assets/upload.png";
 function Profile() {
   const [activeTab, setActiveTab] = useState("Personal");
   const [gender, setGender] = useState("");
@@ -11,6 +12,29 @@ function Profile() {
     month: new Date().getMonth() + 1, // Month is 0-based in JavaScript, so add 1
     year: new Date().getFullYear(),
   });
+
+  const [showDropdown, setShowDropdown] = useState(false); // State to toggle the dropdown
+  const dropdownRef = useRef(null); // Ref for the dropdown
+  const profilePicRef = useRef(null); // Ref for the profile picture
+
+  // Close dropdown when clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        !profilePicRef.current.contains(event.target)
+      ) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const tabs = [
     "Personal",
@@ -25,14 +49,49 @@ function Profile() {
     Personal: (
       <div className=" text-gray-700">
         {/* Profile Picture */}
-        <div className="w-24 h-24 mb-5 mt-[-30px] bg-gray-200 rounded-full overflow-hidden ">
+        <div
+          ref={profilePicRef} // Ref for the profile picture container
+          className="w-24 h-24 mb-5 mt-[-30px] bg-gray-200 rounded-full overflow-hidden cursor-pointer"
+          onClick={() => setShowDropdown(!showDropdown)} // Toggle dropdown visibility
+        >
           <img
             src={ProfilePic} // Placeholder image
             alt="Profile"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex items-center space-x-6">
+
+        {/* Dropdown menu for profile actions */}
+        {showDropdown && (
+          <div
+            ref={dropdownRef} // Ref for the dropdown container
+            className="absolute bg-white shadow-lg mt-[-30px] ml-[-40px] rounded-lg w-64 z-10"
+          >
+            <ul className="text-gray-700">
+              <li className="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100">
+                {/* Image before the text */}
+                <img
+                  src={seeIcon} // Replace with your image path
+                  alt="See Profile"
+                  className="w-6 h-6 mr-2"
+                />
+                See Profile Picture
+              </li>
+              <li className="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100">
+                {/* Image before the text */}
+                <img
+                  src={uploadIcon} // Replace with your image path
+                  alt="Upload Profile"
+                  className="w-6 h-6 mr-2"
+                />
+                Upload Profile Picture
+              </li>
+            </ul>
+          </div>
+        )}
+
+        {/* Rest of the Personal tab content */}
+        <div className="flex items-center space-x-6 mt-10">
           <div className="flex flex-col space-y-4 w-full">
             {/* Name Inputs */}
             <div className="flex space-x-4">
