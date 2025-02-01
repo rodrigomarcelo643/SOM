@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../Student/components/Login";
 import StudentOtp from "../Student/components/StudentOtp";
+import Dashboard from "../Student/components/Dashboard";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/OTP",
     element: <StudentOtp />,
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard />,
   },
 ]);
 

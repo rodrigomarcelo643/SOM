@@ -36,6 +36,7 @@ const StudentOtp = () => {
   const handleVerify = () => {
     if (otp.join("") === "123456") {
       setSuccess(true);
+      navigate("/Dashboard");
       setError("");
     } else {
       setError("Invalid OTP code");
@@ -46,6 +47,7 @@ const StudentOtp = () => {
   const handleResend = () => {
     setTimer(300);
     setResendSuccess(true);
+
     setTimeout(() => setResendSuccess(false), 3000);
   };
 
