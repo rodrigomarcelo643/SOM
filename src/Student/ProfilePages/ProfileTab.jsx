@@ -268,10 +268,10 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
             {/* If Foreigner is selected, show input for country */}
             {citizenship === "Foreigner" && (
               <div className="mt-[-10px]">
-                <label className="block">Specify Country</label>
+                <label className="block">Specify </label>
                 <input
                   type="text"
-                  placeholder="Specify Country"
+                  placeholder="Specify"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                   className="p-2 border border-gray-300 rounded-md w-full"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBullhorn, FaStickyNote } from "react-icons/fa";
+import pinImage from "../../assets/pinImage.png";
 
 const fetchAnnouncements = (year) => {};
 
@@ -16,12 +17,14 @@ function Home() {
       <div className="mt-8 space-y-6">
         {/* Pinned Announcements */}
         <div className="bg-white py-6 px-3 rounded-lg shadow-lg flex items-center space-x-4 border border-gray-300">
-          <FaStickyNote className="text-3xl text-[#8D2525]" />
+          <img src={pinImage} className="mt-[-40px] relative left-2" />
           <div>
-            <h2 className="text-xl font-bold text-gray-800">
+            <h2 className="text-[25px] font-bold text-gray-800">
               Pinned Announcements
             </h2>
-            <p className="text-lg text-gray-600">No Pinned Announcements Yet</p>
+            <p className="text-lg mt-2 text-gray-600">
+              No Pinned Announcements Yet
+            </p>
           </div>
         </div>
 
@@ -37,10 +40,12 @@ function Home() {
         </div>
 
         {/* Resources Title */}
-        <h1 className="text-xl text-gray-800 font-bold mt-6">Resources</h1>
+        <h1 className="text-xl text-gray-800 font-bold mt-6 mb-[8px] ">
+          Resources
+        </h1>
 
         {/* Resources Section */}
-        <div className="bg-white py-6 px-3 rounded-lg shadow-lg border border-gray-300 mt-2">
+        <div className="bg-white py-6 px-3 rounded-lg shadow-lg border border-gray-300 ">
           <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start sm:text-left">
             {/* Left side: Title */}
             <div className="w-full sm:w-1/3 mb-4 sm:mb-0">
