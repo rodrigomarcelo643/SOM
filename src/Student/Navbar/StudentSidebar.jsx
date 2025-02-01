@@ -6,12 +6,7 @@ import {
   ListItem,
   ListItemPrefix,
 } from "@material-tailwind/react";
-import {
-  Bars3Icon,
-  XMarkIcon,
-  BellIcon,
-  ChevronLeftIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, BellIcon } from "@heroicons/react/24/outline";
 import dashboardInactive from "../../assets/dashboardInactive.png";
 import dashboardActive from "../../assets/dashboardActive.png";
 import enrollmentInactive from "../../assets/enrollmentInactive.png";
@@ -24,6 +19,7 @@ import logoutIcon from "../../assets/logout.png";
 import logo from "../../assets/SWU.png";
 import profile from "../../assets/profile.jpg";
 import sadImg from "../../assets/sad.png";
+import navbarBG from "../../assets/navbarBG.png"; // Import your navbar background image
 import { useNavigate } from "react-router-dom";
 
 // Importing the page components
@@ -108,9 +104,8 @@ function StudentSidebar() {
       {/* Sidebar */}
       <Card
         className={`h-full w-60.5 transition-transform transform fixed top-0 left-0 z-20
-    ${
-      isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-    } lg:translate-x-0 lg:block 
+    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+    lg:translate-x-0 lg:block 
     rounded-none border-r border-gray-300 bg-white shadow-lg`}
       >
         {/* Sidebar Close Button */}
@@ -181,10 +176,13 @@ function StudentSidebar() {
         }`}
       >
         {/* Header Navbar */}
-        <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md z-10 fixed w-full top-0 left-0">
+        <div
+          className="flex items-center justify-between bg-cover p-4 border border-gray-300 shadow-md z-10 fixed w-full top-0 left-0"
+          style={{ backgroundImage: `url(${navbarBG})` }} // Apply the background image here
+        >
           {/* Hamburger Icon */}
           <button onClick={toggleSidebar} className="lg:hidden">
-            <Bars3Icon className="h-9 w-9 text-[#B82A2A]" />
+            <Bars3Icon className="h-9 w-9 text-white" />
           </button>
           <div className="flex-1"></div>
 
@@ -198,11 +196,11 @@ function StudentSidebar() {
             </div>
 
             {/* Name and Profile Image */}
-            <div className="flex flex-col items-start">
-              <Typography className="text-gray-800 font-semibold">
+            <div className="flex flex-col items-start text-white">
+              <Typography className="text-white font-semibold">
                 Adrian Say
               </Typography>
-              <Typography className="text-gray-500 text-sm">Student</Typography>
+              <Typography className="text-white text-sm">Student</Typography>
             </div>
             <div className="p-2 rounded-full">
               <img

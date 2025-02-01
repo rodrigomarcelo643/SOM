@@ -217,7 +217,7 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
                     }`}
                     onClick={() => {
                       setCitizenship(option);
-                      if (option !== "Foreigner") setCountry(""); // Reset country input when not Foreigner
+                      if (option !== "Foreigner") setCountry("");
                     }}
                   />
                   <span>{option}</span>
