@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProfilePic from "../../assets/profile.jpg";
+
 function Profile() {
   const [activeTab, setActiveTab] = useState("Personal");
   const [gender, setGender] = useState("");
@@ -22,9 +23,9 @@ function Profile() {
 
   const tabContents = {
     Personal: (
-      <div className="space-y-6 text-gray-700">
+      <div className=" text-gray-700">
         {/* Profile Picture */}
-        <div className="w-24 h-24 bg-gray-200 rounded-full overflow-hidden ">
+        <div className="w-24 h-24 mb-5 mt-[-30px] bg-gray-200 rounded-full overflow-hidden ">
           <img
             src={ProfilePic} // Placeholder image
             alt="Profile"
@@ -163,7 +164,7 @@ function Profile() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       {/* Sidebar Tabs */}
-      <div className="w-full lg:w-1/4 bg-gray-100 py-3  px-6 lg:pr-0 lg:px-6 shadow-md mb-4 lg:mb-0 overflow-x-auto">
+      <div className="w-full sticky top-0 lg:w-1/4 bg-gray-100 py-3 px-6 lg:pr-0 lg:px-6 shadow-md mb-4 lg:mb-0 overflow-x-auto">
         <h1 className="text-2xl font-bold mb-4">Profile</h1>
         <ul className="flex space-x-4 lg:flex-col lg:space-x-0 overflow-x-auto">
           {tabs.map((tab) => (
@@ -173,8 +174,8 @@ function Profile() {
               className={`cursor-pointer p-3 mb-1 text-lg transition-colors duration-300
                 ${
                   activeTab === tab
-                    ? "bg-[#B82A2A] text-white lg:border-b-0 border-b-4 border-[#B82A2A]"
-                    : "text-gray-600 hover:text-[#B82A2A]"
+                    ? "bg-[#B82A2A] text-white lg:border-b-0 sm:rounded-2xl rounded-2xl lg:rounded-tl-[30px] lg:rounded-bl-[30px] border-b-4 border-[#B82A2A] pl-6"
+                    : "text-gray-600 hover:text-[#B82A2A] sm:rounded-2xl rounded-2xl lg:rounded-tl-[30px] lg:rounded-bl-[30px] pl-6"
                 } 
                 lg:text-lg md:text-sm sm:text-xs`}
             >
@@ -185,8 +186,7 @@ function Profile() {
       </div>
 
       {/* Content Area */}
-      <div className="w-full lg:w-3/4 p-6 lg:px-6 pr-0">
-        <h2 className="text-2xl font-bold mb-4">{activeTab}</h2>
+      <div className="w-full lg:w-3/4 p-2 lg:px-6 pr-0 overflow-y-auto max-h-screen">
         <div className="p-6 bg-transparent text-gray-700 rounded-md shadow-md">
           {tabContents[activeTab]}
         </div>
