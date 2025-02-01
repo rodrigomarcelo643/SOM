@@ -19,7 +19,7 @@ import logoutIcon from "../../assets/logout.png";
 import logo from "../../assets/SWU.png";
 import profileAdmin from "../../assets/adminProfile.jpg";
 import sadImg from "../../assets/sad.png";
-import navbarBG from "../../assets/navbarBG.png"; // Import your navbar background image
+import navbarBG from "../../assets/navbarBG.png";
 import { useNavigate } from "react-router-dom";
 
 // Importing the page components

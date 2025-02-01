@@ -6,23 +6,24 @@ import link2 from "../../assets/globe.png";
 import link3 from "../../assets/envelop.png";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-  // State for form fields
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  function OtpVerify() {
-    navigate("/OTP");
-  }
   function forgotPassword() {
     navigate("/forgotpassword");
   }
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Logged in with:", username, password);
-    // Implement actual login logic here
+
+    if (username === "05-2324-008331" && password === "MSIS2025") {
+      console.log("Login successful");
+      navigate("/OTP");
+    } else {
+      setError("Invalid ID Number or password");
+    }
   };
 
   return (
@@ -46,7 +47,7 @@ const Login = () => {
               background-size: 100% 100% !important;
             }
             .form-lg {
-              width: 300px;
+              width: 350px;
             }
             .small-welcome {
               display: none;
@@ -147,11 +148,15 @@ const Login = () => {
                   Forgot Password
                 </p>
               </div>
+              {error && (
+                <p className="text-red-500 text-[12px] mt-[-10px] text-center mt-2">
+                  {error}
+                </p>
+              )}
 
               {/* Login Button */}
               <div className="flex justify-center mt-4 items-center">
                 <button
-                  onClick={OtpVerify}
                   type="submit"
                   className="py-2.5 cursor-pointer px-8 bg-[#6D1212] text-white rounded-md hover:bg-[#8E2525]"
                 >

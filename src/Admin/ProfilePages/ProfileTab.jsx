@@ -1,26 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
-import ProfilePic from "../../assets/profile.jpg";
+import ProfilePicAdmin from "../../assets/adminProfile.jpg";
 import seeIcon from "../../assets/User.png";
 import uploadIcon from "../../assets/upload.png";
 import { FaSave } from "react-icons/fa";
 import edit from "../../assets/edit.png";
 
 function ProfileTab({ activeTab, setActiveTab, currentDate }) {
-  const [gender, setGender] = useState("Male"); // Default to Male
-  const [citizenship, setCitizenship] = useState("Filipino"); // Default to Filipino
-  const [country, setCountry] = useState(""); // Default empty, will show when Foreigner is selected
-  const [showDropdown, setShowDropdown] = useState(false); // State to toggle the dropdown
-  const [isEditing, setIsEditing] = useState(false); // State to control edit mode
-  const [firstName, setFirstName] = useState("Adrian"); // Actual name
-  const [lastName, setLastName] = useState("Say"); // Actual last name
-  const [middleInitial, setMiddleInitial] = useState("D"); // Actual middle initial
+  const [gender, setGender] = useState("Male");
+  const [citizenship, setCitizenship] = useState("Filipino");
+  const [country, setCountry] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [firstName, setFirstName] = useState("Ronald");
+  const [lastName, setLastName] = useState("Catacte");
+  const [middleInitial, setMiddleInitial] = useState("D");
   const [birthDate, setBirthDate] = useState({
     month: currentDate.month,
     day: currentDate.day,
     year: currentDate.year,
-  }); // Actual birthdate values
-  const dropdownRef = useRef(null); // Ref for the dropdown
-  const profilePicRef = useRef(null); // Ref for the profile picture
+  });
+  const dropdownRef = useRef(null);
+  const profilePicRef = useRef(null);
 
   // Close dropdown when clicked outside
   useEffect(() => {
@@ -29,7 +29,7 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target) &&
         !profilePicRef.current.contains(event.target) &&
-        isEditing // Close dropdown only when not in edit mode
+        isEditing
       ) {
         setShowDropdown(false);
       }
@@ -81,7 +81,7 @@ function ProfileTab({ activeTab, setActiveTab, currentDate }) {
           onClick={() => isEditing && setShowDropdown(!showDropdown)} // Toggle dropdown visibility only in edit mode
         >
           <img
-            src={ProfilePic} // Placeholder image
+            src={ProfilePicAdmin} // Placeholder image
             alt="Profile"
             className="w-full h-full object-cover"
           />
