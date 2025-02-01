@@ -23,6 +23,7 @@ import profile from "../../assets/profile.jpg";
 function StudentSidebar() {
   const [active, setActive] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const navigate = useNavigate();
 
   const menuItems = [
@@ -49,6 +50,17 @@ function StudentSidebar() {
   ];
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  // Function to handle logout confirmation
+  const handleLogoutConfirm = () => {
+    setIsModalOpen(false); // Close the modal
+    navigate("/"); // Navigate to home after confirming
+  };
+
+  // Function to handle logout cancel
+  const handleLogoutCancel = () => {
+    setIsModalOpen(false); // Close the modal if canceled
+  };
 
   return (
     <div className="flex h-[100vh]">
@@ -103,22 +115,22 @@ function StudentSidebar() {
               <Typography className="ml-2 font-bold">{item.name}</Typography>
             </ListItem>
           ))}
-        </List>
 
-        {/* Fixed Logout Button */}
-        <div className="absolute bottom-0 w-full border-t-2 border-solid hover:bg-[#B82A2A]  ">
-          <ListItem
-            onClick={() => navigate("/logout")}
-            className="cursor-pointer flex items-center py-5 px-12 hover:text-white "
-          >
-            <ListItemPrefix>
-              <img src={logoutIcon} className="h-6 w-6" />
-            </ListItemPrefix>
-            <Typography className="font-bold hover:text-white">
-              Logout
-            </Typography>
-          </ListItem>
-        </div>
+          {/* Logout Button */}
+          <div className="w-full border-t-2 mt-25 border-solid  ">
+            <ListItem
+              onClick={() => setIsModalOpen(true)} // Open modal when clicked
+              className="cursor-pointer flex items-center py-5 px-12 hover:bg-gray-200 mt-2 "
+            >
+              <ListItemPrefix>
+                <img src={logoutIcon} className="h-6 w-6" />
+              </ListItemPrefix>
+              <Typography className="font-bold hover:text-white">
+                Logout
+              </Typography>
+            </ListItem>
+          </div>
+        </List>
       </Card>
 
       {/* Main Content Area */}
@@ -162,6 +174,31 @@ function StudentSidebar() {
           <Typography variant="h4">{active}</Typography>
         </div>
       </div>
+
+      {/* Logout Confirmation Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-20">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <Typography className="text-lg font-bold mb-4">
+              Are you sure you want to logout?
+            </Typography>
+            <div className="flex justify-between">
+              <button
+                onClick={handleLogoutCancel}
+                className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleLogoutConfirm}
+                className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
