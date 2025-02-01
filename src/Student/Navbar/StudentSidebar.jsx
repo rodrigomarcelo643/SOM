@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   Typography,
@@ -6,7 +6,6 @@ import {
   ListItem,
   ListItemPrefix,
 } from "@material-tailwind/react";
-import { useNavigate } from "react-router-dom";
 import { Bars3Icon, XMarkIcon, BellIcon } from "@heroicons/react/24/outline";
 import dashboardInactive from "../../assets/dashboardInactive.png";
 import dashboardActive from "../../assets/dashboardActive.png";
@@ -20,6 +19,7 @@ import logoutIcon from "../../assets/logout.png";
 import logo from "../../assets/SWU.png";
 import profile from "../../assets/profile.jpg";
 import sadImg from "../../assets/sad.png";
+import { useNavigate } from "react-router-dom";
 
 // Importing the page components
 import Home from "../pages/Home";
@@ -28,10 +28,27 @@ import Folder from "../pages/Folder";
 import Profile from "../pages/Profile";
 
 function StudentSidebar() {
+  // Set the default active component to Dashboard
   const [active, setActive] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  // Set the active tab based on the URL hash
+  useEffect(() => {
+    const hash = window.location.hash.slice(2); // Get the hash part after #/
+    if (hash) {
+      setActive(hash.charAt(0).toUpperCase() + hash.slice(1)); // Capitalize the hash value
+    } else {
+      setActive("Dashboard"); // Default to Dashboard if no hash is found
+    }
+  }, []);
+
+  // Function to handle tab change and update the URL hash
+  const handleTabChange = (tabName) => {
+    setActive(tabName);
+    window.location.hash = `#/${tabName.toLowerCase()}`; // Set the hash in the URL
+  };
 
   const menuItems = [
     {
@@ -44,11 +61,7 @@ function StudentSidebar() {
       activeIcon: enrollmentActive,
       inactiveIcon: enrollmentInactive,
     },
-    {
-      name: "Folder",
-      activeIcon: folderActive,
-      inactiveIcon: folderInactive,
-    },
+    { name: "Folder", activeIcon: folderActive, inactiveIcon: folderInactive },
     {
       name: "Profile",
       activeIcon: profileActive,
@@ -60,8 +73,8 @@ function StudentSidebar() {
 
   // Function to handle logout confirmation
   const handleLogoutConfirm = () => {
-    setIsModalOpen(false); // Close the modal
-    navigate("/"); // Navigate to home after confirming
+    setIsModalOpen(false);
+    navigate("/"); // Redirect to the home page
   };
 
   // Function to handle logout cancel
@@ -81,7 +94,7 @@ function StudentSidebar() {
       case "Profile":
         return <Profile />;
       default:
-        return <Home />;
+        return <Home />; // Default to Home (Dashboard)
     }
   };
 
@@ -112,7 +125,7 @@ function StudentSidebar() {
           {menuItems.map((item) => (
             <ListItem
               key={item.name}
-              onClick={() => setActive(item.name)} // Set the active component
+              onClick={() => handleTabChange(item.name)} // Set the active component
               className={`cursor-pointer flex items-center w-full py-4 relative left-2 transition-all duration-200 ${
                 active === item.name
                   ? "bg-[#B82A2A] text-white"
@@ -140,15 +153,15 @@ function StudentSidebar() {
           ))}
 
           {/* Logout Button */}
-          <div className="w-full border-t-2 mt-25 border-solid  ">
+          <div className="w-full border-t-2 mt-25 border-solid">
             <ListItem
               onClick={() => setIsModalOpen(true)} // Open modal when clicked
-              className="cursor-pointer flex items-center py-5 px-12 hover:bg-gray-200 mt-2 "
+              className="cursor-pointer flex items-center py-5 px-12 hover:bg-gray-200 mt-2"
             >
               <ListItemPrefix>
                 <img src={logoutIcon} className="h-6 w-6" />
               </ListItemPrefix>
-              <Typography className="font-bold ">Logout</Typography>
+              <Typography className="font-bold">Logout</Typography>
             </ListItem>
           </div>
         </List>
@@ -157,7 +170,7 @@ function StudentSidebar() {
       {/* Main Content Area */}
       <div className={`flex-1 ${isSidebarOpen ? "ml-60" : ""} overflow-y-auto`}>
         {/* Header Navbar */}
-        <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md  z-10 fixed w-full top-0 left-0">
+        <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md z-10 fixed w-full top-0 left-0">
           {/* Hamburger Icon */}
           <button onClick={toggleSidebar} className="lg:hidden">
             <Bars3Icon className="h-6 w-6 text-gray-600" />
@@ -201,7 +214,7 @@ function StudentSidebar() {
         <div className="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-30">
           <div className="bg-white p-6 text-center justify-center rounded-[23px] shadow-lg w-96">
             <img
-              className="mx-auto block relative top-[-60px] "
+              className="mx-auto block relative top-[-60px]"
               src={sadImg}
               alt="Sad Image"
             />
