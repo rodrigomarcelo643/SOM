@@ -6,7 +6,12 @@ import {
   ListItem,
   ListItemPrefix,
 } from "@material-tailwind/react";
-import { Bars3Icon, XMarkIcon, BellIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  BellIcon,
+  ChevronLeftIcon,
+} from "@heroicons/react/24/outline";
 import dashboardInactive from "../../assets/dashboardInactive.png";
 import dashboardActive from "../../assets/dashboardActive.png";
 import enrollmentInactive from "../../assets/enrollmentInactive.png";
@@ -179,7 +184,7 @@ function StudentSidebar() {
         <div className="flex items-center justify-between bg-white p-4 border border-gray-300 shadow-md z-10 fixed w-full top-0 left-0">
           {/* Hamburger Icon */}
           <button onClick={toggleSidebar} className="lg:hidden">
-            <Bars3Icon className="h-6 w-6 text-gray-600" />
+            <Bars3Icon className="h-9 w-9 text-[#B82A2A]" />
           </button>
           <div className="flex-1"></div>
 

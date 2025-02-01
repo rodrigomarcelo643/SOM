@@ -14,7 +14,7 @@ function Filipino() {
       </div>
 
       {/* First Box (100% width) */}
-      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
         <img src={cloud} alt="Cloud Upload" className="mb-4" />
         <p className="mt-2 text-gray-600 font-bold">Drag Files to Upload</p>
         <p className="mt-2 text-gray-400 text-[12px]">
@@ -32,7 +32,7 @@ function Filipino() {
 
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 text-gray-600 font-bold sm:text-[6px] md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -49,7 +49,7 @@ function Filipino() {
             Good Moral (from the dean 1 copy & from the professor 1 copy)
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -70,7 +70,7 @@ function Filipino() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -87,7 +87,7 @@ function Filipino() {
             Original Copy of NMAT Result (Percentile rank = 40%)
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -106,7 +106,7 @@ function Filipino() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -123,7 +123,7 @@ function Filipino() {
             Photocopy of Residence Certificate (Cedula)
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -142,7 +142,7 @@ function Filipino() {
         </div>
       </div>
       {/* First Box (100% width) */}
-      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
         <img src={cloud} alt="Cloud Upload" className="mb-4" />
         <p className="mt-2 text-gray-600 font-bold ">Drag Files to Upload</p>
         <p className="mt-2 text-gray-400 text-[12px]">
@@ -160,7 +160,7 @@ function Filipino() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 text-gray-600  font-bold sm:text-[6px] md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -177,7 +177,7 @@ function Filipino() {
             Physical examination report from University Clinic
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 text-gray-600 font-bold sm:text-[6px] md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload

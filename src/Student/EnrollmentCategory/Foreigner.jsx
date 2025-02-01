@@ -14,7 +14,7 @@ function Foreigner() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 text-gray-600 font-bold sm:text-[6px] md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -32,7 +32,7 @@ function Foreigner() {
             authenticated
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -53,7 +53,7 @@ function Foreigner() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -71,7 +71,7 @@ function Foreigner() {
             your professors
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -90,7 +90,7 @@ function Foreigner() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -107,7 +107,7 @@ function Foreigner() {
             (2) copies of Police Clearance, Visa, Passport
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 sm:text-[6px] font-bold text-gray-600  md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -126,7 +126,7 @@ function Foreigner() {
         </div>
       </div>
       {/* First Box (100% width) */}
-      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
         <img src={cloud} alt="Cloud Upload" className="mb-4" />
         <p className="mt-2 text-gray-600 font-bold ">Drag Files to Upload</p>
         <p className="mt-2 text-gray-400 text-[12px]">
@@ -144,7 +144,7 @@ function Foreigner() {
         </h1>
       </div>
       {/* First Box (100% width) */}
-      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+      <div className="mt-6 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
         <img src={cloud} alt="Cloud Upload" className="mb-4" />
         <p className="mt-2 text-gray-600 font-bold ">Drag Files to Upload</p>
         <p className="mt-2 text-gray-400 text-[12px]">
@@ -162,7 +162,7 @@ function Foreigner() {
       </div>
       {/* Two Boxes (50% each) */}
       <div className="flex gap-3 mt-6">
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 text-gray-600  font-bold sm:text-[6px] md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
@@ -179,7 +179,7 @@ function Foreigner() {
             Physical examination report from University Clinic
           </h1>
         </div>
-        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-md flex flex-col items-center justify-center">
+        <div className="w-1/2 p-4 bg-[#F8F8F8] border-2 border-dashed border-[#E8BFBF] rounded-[17px] flex flex-col items-center justify-center">
           <img src={cloud} alt="Cloud Upload" className="mb-4" />
           <p className="mt-2 text-gray-600 font-bold sm:text-[6px] md:text-[15px] text-[10px] lg-text-[30px]">
             Drag Files to Upload
