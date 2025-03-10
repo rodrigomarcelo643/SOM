@@ -22,33 +22,28 @@ import sadImg from "../../assets/sad.png";
 import navbarBG from "../../assets/navbarBG.png";
 import { useNavigate } from "react-router-dom";
 
-// Importing the page components
 import Home from "../pages/Home";
 import Enrollment from "../pages/Enrollment";
 import Folder from "../pages/Folder";
 import Profile from "../pages/Profile";
 
 function AdminSidebar() {
-  // Set the default active component to Dashboard
   const [active, setActive] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-
-  // Set the active tab based on the URL hash
   useEffect(() => {
-    const hash = window.location.hash.slice(2); // Get the hash part after #/
+    const hash = window.location.hash.slice(2);
     if (hash) {
-      setActive(hash.charAt(0).toUpperCase() + hash.slice(1)); // Capitalize the hash value
+      setActive(hash.charAt(0).toUpperCase() + hash.slice(1));
     } else {
-      setActive("Dashboard"); // Default to Dashboard if no hash is found
+      setActive("Dashboard");
     }
   }, []);
 
-  // Function to handle tab change and update the URL hash
   const handleTabChange = (tabName) => {
     setActive(tabName);
-    window.location.hash = `#/${tabName.toLowerCase()}`; // Set the hash in the URL
+    window.location.hash = `#/${tabName.toLowerCase()}`;
   };
 
   const menuItems = [

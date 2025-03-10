@@ -1,117 +1,128 @@
 import React, { useState } from "react";
-import cloud from "../../assets/cloud.png";
-import pdfIcon from "../../assets/png.png";
-import { AiOutlineDelete, AiOutlineEdit, AiOutlineSave } from "react-icons/ai";
+import { IoIosArrowBack } from "react-icons/io"; // Importing the back arrow icon
+import star from "../../assets/star.png";
+import firstYearImage from "../../assets/darkblue.png";
+import secondYearImage from "../../assets/blue.png";
+import thirdYearImage from "../../assets/orange.png";
+import fourthYearImage from "../../assets/violet.png";
+import FirstYear from "../students/FirstYear";
+import SecondYear from "../students/SecondYear";
+import ThirdYear from "../students/ThirdYear";
+import FourthYear from "../students/FourthYear";
 
 function Folder() {
-  const [uploadedFiles, setUploadedFiles] = useState({
-    "2 Photocopies of NSO Birth Certificates": [
-      { name: "Birth Certificate_1.png" },
-      { name: "Birth Certificate_2.png" },
-    ],
-    "Good Moral (from the dean 1 copy & from the professor 1 copy)": [
-      { name: "Good Moral_1.png" },
-      { name: "Good Moral_2.png" },
-    ],
-  });
-  const [editing, setEditing] = useState({});
+  const [selectedFolder, setSelectedFolder] = useState(null); // Initially no folder is selected
 
   const requiredDocuments = [
-    "2 Photocopies of NSO Birth Certificates",
-    "Good Moral (from the dean 1 copy & from the professor 1 copy)",
-    "2 Photocopies of BS Diploma or Certificate Expected Date of Graduation from the Dean",
-    "Original Copy of NMAT Result (Percentile rank = 40%)",
-    "2pcs 2 x 2 picture",
-    "Photocopy of Residence Certificate (Cedula)",
-    "Certificate of Grade Point Average or Grade Weighted Average (GWA)",
-    "Undertaking with waiver, release and Quit claim *NMAT & Failed Subjects",
-    "Physical examination report from University Clinic",
-    "School of Medicine Retention Policy & Grading System Effective SY 2021-2022",
-  ];
+    "First Year Files",
+    "Second Year Files",
+    "Third Year Files",
+    "Fourth Year Files",
+  ]; // Removed "Getting Started Files"
 
-  const handleDelete = (docTitle, fileIndex) => {
-    setUploadedFiles((prevFiles) => {
-      const newFiles = { ...prevFiles };
-      newFiles[docTitle].splice(fileIndex, 1);
-      if (newFiles[docTitle].length === 0) delete newFiles[docTitle];
-      return { ...newFiles };
-    });
+  const getFolderBackgroundImage = (folderName) => {
+    switch (folderName) {
+      case "First Year Files":
+        return firstYearImage;
+      case "Second Year Files":
+        return secondYearImage;
+      case "Third Year Files":
+        return thirdYearImage;
+      case "Fourth Year Files":
+        return fourthYearImage;
+      default:
+        return null;
+    }
   };
 
-  const toggleEdit = (docTitle) => {
-    setEditing((prevEditing) => ({
-      ...prevEditing,
-      [docTitle]: !prevEditing[docTitle],
-    }));
+  const folderContent = {
+    "First Year Files": "Compiled data from all the first year students.",
+    "Second Year Files": "Compiled data from all the second year students.",
+    "Third Year Files": "Compiled data from all the third year students.",
+    "Fourth Year Files": "Compiled data from all the fourth year students.",
+  };
+
+  const handleFolderClick = (folderName) => {
+    setSelectedFolder(folderName);
+  };
+
+  const handleBackClick = () => {
+    setSelectedFolder(null); // Go back to the main folder view
+  };
+
+  const renderFolderContent = () => {
+    switch (selectedFolder) {
+      case "First Year Files":
+        return <FirstYear />;
+      case "Second Year Files":
+        return <SecondYear />;
+      case "Third Year Files":
+        return <ThirdYear />;
+      case "Fourth Year Files":
+        return <FourthYear />;
+      default:
+        return (
+          <div>
+            <div className="flex items-center mt-5 pb-2">
+              <h2 className="text-base text-gray-700 md:text-lg whitespace-nowrap">
+                All Files
+              </h2>
+              <div className="flex-1 border-b border-gray-400 ml-2 md:ml-4 w- md:w-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+              {requiredDocuments.map((docTitle, index) => (
+                <div
+                  key={index}
+                  className="p-8.5 rounded-[17px] relative cursor-pointer"
+                  style={{
+                    backgroundImage: `url(${getFolderBackgroundImage(
+                      docTitle
+                    )})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  onClick={() => handleFolderClick(docTitle)} // Make the folder clickable
+                >
+                  <div className="flex">
+                    {docTitle !== "Getting Started Files" && (
+                      <div className="w-13 h-13 rounded-full bg-white flex justify-center items-center">
+                        <img src={star} className="w-9 h-9" alt="star" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex justify-between items-center pb-4">
+                    <h1 className="text-[23px] mb-4 mt-2 font-bold text-white flex-1">
+                      {docTitle}
+                    </h1>
+                  </div>
+                  <div className="text-white">
+                    <p>{folderContent[docTitle]}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+    }
   };
 
   return (
     <div>
-      <div className="flex items-center mt-5 pb-2">
-        <h2 className="text-base text-gray-700 md:text-lg whitespace-nowrap">
-          Attached Files
-        </h2>
-        <div className="flex-1 border-b border-gray-400 ml-2 md:ml-4 w-16 md:w-auto"></div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
-        {requiredDocuments.map((docTitle, index) => (
-          <div
-            key={index}
-            className="p-4 bg-[#F8F8F8] border border-gray-300 rounded-[17px] shadow-sm w-full relative"
+      {/* If a folder is selected, show a back button */}
+      {selectedFolder && (
+        <div className="flex items-center mt-5 pb-4">
+          <button
+            onClick={handleBackClick}
+            className="flex items-center text-gray-700 md:text-lg space-x-2"
           >
-            {/* Container for Title and Edit button */}
-            <div className="flex justify-between items-center border-b border-gray-300 pb-4 mb-6">
-              <h1 className="text-[16px] mb-4 mt-8 font-bold text-gray-700 flex-1">
-                {docTitle}
-              </h1>
-              {/* Edit button fixed to the right */}
-              <button
-                onClick={() => toggleEdit(docTitle)}
-                className="absolute right-4 top-4 text-[#B82A2A] hover:text-[#A72A2A] flex items-center"
-              >
-                {editing[docTitle] ? (
-                  <AiOutlineSave className="mr-1" />
-                ) : (
-                  <AiOutlineEdit className="mr-1" />
-                )}{" "}
-                {editing[docTitle] ? "Save" : "Edit"}
-              </button>
-            </div>
-            {uploadedFiles[docTitle] ? (
-              uploadedFiles[docTitle].map((file, fileIndex) => (
-                <div
-                  key={fileIndex}
-                  className="flex justify-between items-center w-full mb-2"
-                >
-                  <div className="flex items-center">
-                    {file.name.endsWith(".png") && (
-                      <img
-                        src={pdfIcon}
-                        alt="PDF Icon"
-                        className="w-6 h-6 mr-2"
-                      />
-                    )}
-                    <p className="font-bold text-gray-700">{file.name}</p>
-                  </div>
-                  {editing[docTitle] && (
-                    <button
-                      onClick={() => handleDelete(docTitle, fileIndex)}
-                      className="text-red-500 flex items-center text-sm hover:text-red-700"
-                    >
-                      <AiOutlineDelete className="mr-1" /> Delete
-                    </button>
-                  )}
-                </div>
-              ))
-            ) : (
-              <div className="flex flex-col items-center mt-10 mb-5">
-                <img src={cloud} alt="Cloud Upload" className="mb-4" />
-                <p className="font-bold text-gray-700">No uploads yet</p>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+            <IoIosArrowBack size={24} />
+            <span>Back to Folders</span>
+          </button>
+        </div>
+      )}
+
+      {/* Render content based on the selected folder */}
+      {renderFolderContent()}
     </div>
   );
 }
