@@ -27,7 +27,6 @@ const LoginNavbar = () => {
         </span>
       </div>
 
-      {/* Desktop Navigation (Aligned to Right) */}
       <div className="hidden md:flex items-center space-x-10 ">
         {["home", "faq's", "announcements"].map((tab) => (
           <div key={tab} className="relative flex flex-col items-center ml-3 ">

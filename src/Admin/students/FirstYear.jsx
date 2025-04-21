@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaSearch, FaEnvelope, FaTrash } from "react-icons/fa";
 import StudentDetail from "./StudentDetail";
 import profileAdmin from "../../assets/profile.jpg";
-import { IoIosArrowBack } from "react-icons/io"; // Importing the back arrow icon
+import { IoIosArrowBack } from "react-icons/io";
 const ITEMS_PER_PAGE = 10;
 
 function FirstYear() {
