@@ -19,10 +19,10 @@ import logoutIcon from "../../assets/logout.png";
 import logo from "../../assets/SWU.png";
 import profile from "../../assets/profile.jpg";
 import sadImg from "../../assets/sad.png";
-import navbarBG from "../../assets/navbarBG.png"; // Import your navbar background image
+import navbarBG from "../../assets/navbarBG.png";
 import { useNavigate } from "react-router-dom";
 
-// Importing the page components
+// page components
 import Home from "../pages/Home";
 import Enrollment from "../pages/Enrollment";
 import Folder from "../pages/Folder";
@@ -147,7 +147,7 @@ function StudentSidebar() {
                   src={
                     active === item.name ? item.activeIcon : item.inactiveIcon
                   }
-                  className="w-5 w-5 relative left-2.5"
+                  className="w-5 relative left-2.5"
                 />
               </div>
               <h1 className="ml-2 relative left-4 font-bold">{item.name}</h1>{" "}
@@ -216,7 +216,6 @@ function StudentSidebar() {
           {renderActiveComponent()}
         </div>
       </div>
-
       {/* Logout Confirmation Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-30">
